@@ -4,10 +4,15 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:downloadtester"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="350" Background="Black">
+        mc:Ignorable="d" ResizeMode="CanMinimize"
+        Title="Download Tester" Height="320" Width="300" Background="Black">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -24,14 +29,27 @@
 
         </Grid>
 
-        <Label Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White">Last Download</Label>
-        <Label Grid.Row="1" Name="lLastDownload" HorizontalAlignment="Center" Foreground="White" VerticalAlignment="Center"/>
-        <Label Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="White">kb/s</Label>
+        <Label Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White">Interval</Label>
+        <ComboBox Grid.Row="1" Name="cbTimespan" Margin="7" HorizontalAlignment="Right" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="200"/>
 
-        <Label Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White">Average Download</Label>
-        <Label Grid.Row="2" Name="lLastAverageDownload" HorizontalAlignment="Center" Foreground="White" VerticalAlignment="Center"/>
+        <Label Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White">Last Download</Label>
+        <Label Grid.Row="2" Name="lLastDownload" HorizontalAlignment="Center" Foreground="White" VerticalAlignment="Center"/>
         <Label Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="White">kb/s</Label>
 
+        <Label Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White">Average Download</Label>
+        <Label Grid.Row="3" Name="lAverageDownload" HorizontalAlignment="Center" Foreground="White" VerticalAlignment="Center"/>
+        <Label Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="White">kb/s</Label>
+
+        <Label Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White">Worst Download</Label>
+        <Label Grid.Row="4" Name="lWorstDownload" HorizontalAlignment="Center" Foreground="White" VerticalAlignment="Center"/>
+        <Label Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="White">kb/s</Label>
+
+        <Label Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White">Best Download</Label>
+        <Label Grid.Row="5" Name="lBestDownload" HorizontalAlignment="Center" Foreground="White" VerticalAlignment="Center"/>
+        <Label Grid.Row="5" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="White">kb/s</Label>
+
+        <Button Name="btPause" Grid.Row="6" Content="Pause" Margin="2" Click="btPause_Click"/>
+        <Button Name="btDocument" Grid.Row="7" Content="Document Downloads: off" Margin="2" Click="btDocument_Click"/>
 
     </Grid>
 </Window>
